@@ -1,0 +1,18 @@
+pipeline {
+	agent any
+	stages {
+		stage('Test') {
+			steps {
+				sh 'cat test.conf'
+			}
+		}
+	}
+	post {
+		always {
+			echo "this is post script"
+		}
+		failure {
+			mail to: alireza.khalesi@peykasa.ir, subject: "failure step"
+		}
+	}
+}
