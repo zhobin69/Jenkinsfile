@@ -12,7 +12,7 @@ pipeline {
             echo "this is post checking"
         }
         failure {
-            mail to: alireza.khalesi@peykasa.ir, subject: 'The Pipeline failed :('
+            echo "fail pipeline"
         }
     }
 }
