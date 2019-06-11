@@ -8,11 +8,11 @@ pipeline {
 		}
 	}
 	post {
-		always {
-			echo "this is post script"
-		}
-		failure {
-			mail to: alireza.khalesi@peykasa.ir, subject: "failure step"
-		}
-	}
+        always {
+            echo "this is post checking"
+        }
+        failure {
+            mail to: alireza.khalesi@peykasa.ir, subject: 'The Pipeline failed :('
+        }
+    }
 }
