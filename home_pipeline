@@ -1,12 +1,16 @@
 pipeline {
 	agent any
 	stages {
-		stage('Deploy') {
-			steps {
-				timeout(time: 2, unit: 'MINUTES') {
-					retry (10) {
-						echo "Hello zhobin"
-						sh "ls -l"
+		stage('Test Browser') {
+			parallel {
+				stage('Chrome') {
+					steps {
+						echo "Chrome Tests"
+					}
+				}
+				stage('Fire Fox') {
+					steps {
+						echo "Fire Fox Tests"
 					}
 				}
 			}
