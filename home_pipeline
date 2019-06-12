@@ -1,9 +1,14 @@
 pipeline {
 	agent any
 	stages {
-		stage('Build') {
+		stage('Deploy') {
 			steps {
-				sh 'npm --version'
+				timeout(time: 2, unit: MINUTE) {
+					retry (10) {
+						echo "Hello zhobin"
+						sh "ls -l"
+					}
+				}
 			}
 		}
 	}
