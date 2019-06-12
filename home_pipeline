@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Deploy') {
 			steps {
-				timeout(time: 2, unit: MINUTE) {
+				timeout(time: 2, unit: MINUTES) {
 					retry (10) {
 						echo "Hello zhobin"
 						sh "ls -l"
