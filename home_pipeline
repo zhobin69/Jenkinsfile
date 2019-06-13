@@ -1,8 +1,9 @@
 pipeline {
 	agent {
 		node {
-			label 'myDefinedWorkspace'
-			custumWorkspace '/home/khalesi/jenkins_workspace'
+			label 'my-defined-label'
+            		customWorkspace '/home/khalesi/jenkins_workspace/'
+			
 		}
 	}
 	
