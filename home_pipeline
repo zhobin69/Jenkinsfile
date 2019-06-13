@@ -1,16 +1,18 @@
 pipeline {
 	agent any
 	stages {
-		stage('Test Browser') {
+		stage('Browser Test') {
 			parallel {
-				stage('Chrome') {
+				stage('Chrome Test') {
 					steps {
-						echo "Chrome Tests"
+						echo "Hi there"
+						echo "I'm going to test chrome browser"
 					}
 				}
-				stage('Fire Fox') {
+				stage('FireFox Test') {
 					steps {
-						echo "Fire Fox Tests"
+						echo "Hi again"
+						echo "I'm going to test FireFox"
 					}
 				}
 			}
