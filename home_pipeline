@@ -1,5 +1,11 @@
 pipeline {
-	agent any
+	agent {
+		node {
+			label 'myDefinedWorkspace'
+			custumWorkspace '/home/khalesi/jenkins_workspace'
+		}
+	}
+	
 	stages {
 		stage('Browser Test') {
 			parallel {
@@ -7,6 +13,7 @@ pipeline {
 					steps {
 						echo "Hi there"
 						echo "I'm going to test chrome browser"
+						sh "pwd"
 					}
 				}
 				stage('FireFox Test') {
