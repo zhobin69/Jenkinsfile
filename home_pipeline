@@ -13,7 +13,7 @@ pipeline {
 			deleteDir()  //delete workspace
 		}
 		success {
-			echo "I success"
+			mail to: 'alireza.khalesi@peykasa.ir', subject: 'success pipeline', body: 'this is success'
 		}
 		unstable {
 			echo "I'm unstable"
