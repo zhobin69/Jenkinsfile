@@ -1,28 +1,28 @@
 pipeline {
-	agent {
-		node {
-			label 'myDefinedWorkspace'
-			custumWorkspace '/home/khalesi/jenkins_workspace'
+	agent any
+	stages {
+		stage('No-op') {
+			steps {
+				sh 'ls'
+			}
 		}
 	}
-	
-	stages {
-		stage('Browser Test') {
-			parallel {
-				stage('Chrome Test') {
-					steps {
-						echo "Hi there"
-						echo "I'm going to test chrome browser"
-						sh "pwd"
-					}
-				}
-				stage('FireFox Test') {
-					steps {
-						echo "Hi again"
-						echo "I'm going to test FireFox"
-					}
-				}
-			}
+	post {
+		always {
+			echo "I have finished pipeline"
+			deleteDir()  //delete workspace
+		}
+		success {
+			echo "I success"
+		}
+		unstable {
+			echo "I'm unstable"
+		}
+		failure {
+			echo "I'm failed"
+		}
+		changed {
+			echo "things are different"
 		}
 	}
 }
