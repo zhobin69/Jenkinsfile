@@ -1,16 +1,5 @@
 pipeline {
-<<<<<<< HEAD
 	agent any
-=======
-	agent {
-		node {
-			label 'my-defined-label'
-            		customWorkspace '/home/khalesi/jenkins_workspace/'
-			
-		}
-	}
-	
->>>>>>> 54cb7ca18816c5bc24fbb38aa805f39c3624c751
 	stages {
 		stage('No-op') {
 			steps {
